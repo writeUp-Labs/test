@@ -3,90 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hacked-Matrix | Vyragon OS</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Hacked-Matrix | Vyragon OS Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#090506;color:#f2ece9;font-family:'Inter',sans-serif;overflow-x:hidden}
+body{background:#090506;color:#f2ece9;font-family:'Inter',sans-serif}
+.bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(900px at 50% -10%,rgba(220,20,20,0.35),transparent 65%),#070505}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid rgba(255,40,40,0.15);position:sticky;top:0;background:rgba(10,5,5,0.85);backdrop-filter:blur(10px)}
 .mono{font-family:'JetBrains Mono',monospace}
-.bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(900px at 50% -12%,rgba(220,20,20,0.38),transparent 65%),radial-gradient(600px at 85% 20%,rgba(255,40,40,0.18),transparent 60%),#070505}
-.stars{position:fixed;inset:0;z-index:-1;opacity:.15;background-image:radial-gradient(white 1px, transparent 1px);background-size:90px 90px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 26px;border-bottom:1px solid rgba(255,40,40,0.15);background:rgba(10,5,5,0.88);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
-.hero{text-align:center;padding:72px 20px 30px;position:relative}
-.logo{width:132px;height:132px;margin:0 auto 22px;border-radius:28px;background:#140a0a;border:1px solid rgba(255,40,40,0.28);box-shadow:0 0 70px rgba(255,20,20,0.55),0 0 140px rgba(255,20,20,0.25);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero{text-align:center;padding:70px 20px 30px}
+.logo{width:140px;height:140px;margin:0 auto 24px;border-radius:50%;background:#150a0a;border:1px solid rgba(255,40,40,0.3);box-shadow:0 0 60px rgba(255,20,20,0.5);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .logo img{width:100%;height:100%;object-fit:cover}
-h1{font-size:clamp(2.8rem,8vw,4.6rem);font-weight:900;letter-spacing:-1px;line-height:.9}
-h1 span{color:#ff2a2a;text-shadow:0 0 30px rgba(255,40,40,0.7)}
-.badge{margin:16px auto 0;display:inline-block;border:1px solid rgba(255,50,50,0.3);background:rgba(255,30,30,0.1);color:#ff7a7a;padding:7px 16px;border-radius:22px;font-size:.62rem;letter-spacing:1.4px}
-.tag{max-width:620px;margin:18px auto 28px;opacity:.82;line-height:1.6;font-size:.98rem}
-.btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.btn{padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:800;font-size:.85rem;transition:.2s}
-.btn-red{background:#ff1f1f;color:white;box-shadow:0 0 32px rgba(255,20,20,0.55)}
-.btn-red:hover{background:#ff3838;transform:translateY(-1px);box-shadow:0 0 45px rgba(255,20,20,0.75)}
-.btn-ghost{border:1px solid rgba(255,255,255,0.18);color:#fff;background:rgba(255,255,255,0.03)}
-.btn-ghost:hover{border-color:rgba(255,40,40,0.5);background:rgba(255,40,40,0.08)}
-.section{max-width:920px;margin:0 auto;padding:28px 22px}
-.card{background:linear-gradient(180deg,rgba(28,12,12,0.92),rgba(14,7,7,0.98));border:1px solid rgba(255,40,40,0.18);border-radius:18px;padding:26px 26px;backdrop-filter:blur(8px)}
-.code{background:#0d0707;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 16px;font-family:'JetBrains Mono';font-size:.82rem;color:#ffb3b3;overflow:auto;margin:8px 0 14px;line-height:1.6}
-.label{font-size:.66rem;letter-spacing:1.3px;opacity:.5;margin:14px 0 4px}
-.disclaimer{margin-top:20px;border-left:3px solid #ff2a2a;padding:12px 16px;background:rgba(255,40,40,0.06);border-radius:0 12px 12px 0;font-size:.82rem;line-height:1.6;opacity:.9}
-.footer{text-align:center;padding:40px 20px;border-top:1px solid rgba(255,255,255,0.06);margin-top:40px;font-size:.68rem;opacity:.5;line-height:1.8}
+h1{font-size:3rem;font-weight:900;letter-spacing:-1px} h1 span{color:#ff2a2a}
+.badge{display:inline-block;margin:14px auto;border:1px solid rgba(255,50,50,0.3);background:rgba(255,30,30,0.1);color:#ff6a6a;padding:6px 14px;border-radius:20px;font-size:.65rem;letter-spacing:1px}
+.card{max-width:900px;margin:30px auto;background:linear-gradient(180deg,rgba(25,12,12,0.9),rgba(12,6,6,0.95));border:1px solid rgba(255,40,40,0.18);border-radius:18px;padding:28px}
+.code{background:#0d0707;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px;font-family:'JetBrains Mono';font-size:.82rem;margin:10px 0;color:#ffb3b3;overflow:auto}
+.btn{display:inline-block;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;margin:8px}
+.btn-red{background:#ff1f1f;color:white;box-shadow:0 0 30px rgba(255,20,20,0.5)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.18);color:#fff}
+.footer{text-align:center;padding:40px;font-size:.7rem;opacity:.5}
 </style>
 </head>
 <body>
-<div class="bg"></div><div class="stars"></div>
-
+<div class="bg"></div>
 <nav>
-  <div class="mono" style="font-weight:900;letter-spacing:2px;font-size:.85rem">VYRA<span style="color:#ff2a2a">GON</span> OS</div>
-  <div class="mono" style="font-size:.6rem;opacity:.5">USE RESPONSIBLY • RED BUILD</div>
+  <div class="mono" style="font-weight:900;letter-spacing:2px">VYRA<span style="color:#ff2a2a">GON</span></div>
+  <div class="mono" style="font-size:.6rem;opacity:.6">USE RESPONSIBLY</div>
 </nav>
 
 <div class="hero">
   <div class="logo">
-    <img src="logo.png" alt="Vyragon Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='🐉'">
+    <!-- This will show his logo.png -->
+    <img src="logo.png" alt="Vyragon Logo" onerror="this.src='https://via.placeholder.com/140/150a0a/ff2a2a?text=🐉'">
   </div>
-  <div class="mono badge">V1.0 • OPEN SOURCE • RED TEAM • TOOLS COLLECTION</div>
-  <h1 style="margin-top:18px">Vyragon<span>OS</span></h1>
-  <div class="mono" style="font-size:.78rem;opacity:.55;letter-spacing:2px;margin-top:6px">( Open Source )</div>
-  <p class="tag">Vyragon OS is an collection of Individual custom Tools & Projects. Feel free to explore!</p>
-  
-  <div class="btns">
-    <a class="btn btn-red" href="https://youtube.com/@vyragon-os" target="_blank">View VyragonOS on YouTube</a>
-    <a class="btn btn-ghost mono" href="https://github.com/albi-cyber/Hacked-Matrix" target="_blank">GitHub</a>
-  </div>
-  <div class="mono" style="font-size:.6rem;opacity:.4;margin-top:14px">Contact: via GitHub • albi-cyber</div>
+  <h1>Hacked-<span>Matrix</span></h1>
+  <div class="mono badge">VYRA GON OS • TOOL 01 • RUBY • KALI LINUX</div>
+  <p style="max-width:600px;margin:16px auto;opacity:.8;line-height:1.6">A custom terminal digital rain effect written in Ruby for Kali Linux, displaying " System Hacked ".</p>
+  <a class="btn btn-red" href="https://youtube.com/@vyragon-os" target="_blank">View VyragonOS on YouTube</a>
+  <a class="btn btn-ghost mono" href="https://github.com/albi-cyber/Hacked-Matrix" target="_blank">GitHub</a>
 </div>
 
-<div class="section">
-  <div class="card">
-    <div class="mono" style="font-size:.62rem;color:#ff5a5a;letter-spacing:1.5px;margin-bottom:10px">TOOL • RUBY • KALI LINUX</div>
-    <h2 style="font-size:1.7rem;margin-bottom:8px">Hacked-Matrix</h2>
-    <p style="opacity:.72;font-size:.95rem;line-height:1.6;margin-bottom:10px">A custom terminal digital rain effect written in Ruby for Kali Linux, displaying " System Hacked ".</p>
-    
-    <div class="label mono">TO CLONE THE REPOSITORY;</div>
-    <div class="code">git clone https://github.com/albi-cyber/Hacked-Matrix.git<br>cd Hacked-Matrix</div>
-
-    <div class="label mono">TO MAKE IT EXECUTABLE:</div>
-    <div class="code">chmod +x Hacked-Matrix</div>
-
-    <div class="label mono">TO RUN;</div>
-    <div class="code">./Hacked-Matrix</div>
-
-    <div class="label mono">REQUIREMENTS:</div>
-    <div class="code">Ruby installed on your system</div>
-
-    <div class="disclaimer">
-      <b class="mono" style="color:#ff6a6a">DISCLAIMER:</b><br>
-      This tool is created for educational, aesthetic, and entertainment purposes only. It is a visual terminal animation designed to look like a hacking effect and does not perform any actual malicious actions, network infiltration, or system compromise.<br><br>
-      The author assumes no liability and is not responsible for any misuse or damage caused by this software. Use it responsibly.
-    </div>
+<div class="card">
+  <div class="mono" style="font-size:.65rem;color:#ff5a5a;letter-spacing:1.5px;margin-bottom:14px">INSTALLATION</div>
+  <div class="mono" style="font-size:.75rem;opacity:.6;margin-bottom:4px">1. CLONE</div>
+  <div class="code">git clone https://github.com/albi-cyber/Hacked-Matrix.git<br>cd Hacked-Matrix</div>
+  <div class="mono" style="font-size:.75rem;opacity:.6;margin:14px 0 4px">2. MAKE EXECUTABLE</div>
+  <div class="code">chmod +x hacked.matrix</div>
+  <div class="mono" style="font-size:.75rem;opacity:.6;margin:14px 0 4px">3. RUN</div>
+  <div class="code">./hacked.matrix<br># or ruby hacked.matrix</div>
+  <div style="margin-top:18px;font-size:.8rem;opacity:.7" class="mono">Requirements: Ruby installed</div>
+  
+  <div style="margin-top:22px;border-left:3px solid #ff2a2a;padding:12px 16px;background:rgba(255,40,40,0.06);border-radius:0 10px 10px 0;font-size:.8rem;line-height:1.6">
+    <b class="mono" style="color:#ff6a6a">DISCLAIMER:</b><br>
+    Created for educational, aesthetic, and entertainment purposes only. Visual terminal animation, no malicious actions. Use responsibly.
   </div>
 </div>
 
 <div class="footer mono">
-  © 2026 Vyragon OS (Open Source) • albi-cyber/Hacked-Matrix<br>
-  Educational • Synthetic Only • Use Responsibly
+  © 2026 Vyragon OS • Tool Page • albi-cyber/Hacked-Matrix<br>
+  Educational • Use Responsibly 
 </div>
-
 </body>
 </html>
