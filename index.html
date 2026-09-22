@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vyragon OS (Open Source)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#0a0606;
+  color:#ece8e6;
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+.mono{font-family:'JetBrains Mono',monospace}
+.bg{
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px at 50% -10%, rgba(220,20,20,0.35), transparent 60%),
+    radial-gradient(700px at 90% 30%, rgba(255,30,30,0.18), transparent 60%),
+    radial-gradient(600px at 10% 90%, rgba(150,10,10,0.2), transparent 60%),
+    #070505;
+}
+.bg::after{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size:80px 80px;
+  opacity:0.15;
+}
+/* Dragon wings silhouette */
+.dragon{
+  position:fixed;inset:0;z-index:-1;opacity:0.07;
+  background: no-repeat center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Cpath d='M0 200 Q150 50 300 200 T600 200 Q450 350 300 200 T0 200' fill='none' stroke='%23ff2020' stroke-width='2'/%3E%3C/svg%3E");
+  background-size:120% auto;
+}
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 28px;max-width:1100px;margin:0 auto;
+}
+.logo-box{
+  width:88px;height:88px;background:#111;border-radius:22px;
+  display:grid;place-items:center;
+  box-shadow:0 0 40px rgba(255,20,20,0.5), inset 0 0 20px rgba(255,20,20,0.1);
+  border:1px solid rgba(255,30,30,0.3);
+  font-size:42px;
+}
+.badge{
+  display:inline-flex;gap:8px;
+  border:1px solid rgba(255,40,40,0.3);
+  background:rgba(40,10,10,0.8);
+  padding:6px 14px;border-radius:999px;
+  font-size:.68rem;letter-spacing:.08em;color:#ffaaaa;
+}
+.hero{
+  max-width:900px;margin:60px auto 0 auto;text-align:center;padding:0 20px;
+}
+.hero h1{
+  font-size:clamp(2.8rem, 8vw, 4.5rem);font-weight:900;
+  letter-spacing:-.04em;margin-top:28px;
+  text-shadow:0 0 30px rgba(255,20,20,0.5);
+}
+.hero h1 span{color:#ff2a2a}
+.hero p{
+  margin:18px auto 0 auto;max-width:560px;
+  color:#c9bdbd;font-size:1.08rem;line-height:1.5;
+}
+.btns{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.btn{
+  padding:13px 22px;border-radius:999px;font-weight:700;
+  text-decoration:none;font-size:.92rem;transition:.2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-red{background:#ff1a1a;color:#fff;box-shadow:0 0 25px rgba(255,20,20,0.5)}
+.btn-red:hover{background:#ff3333;transform:translateY(-1px)}
+.btn-dark{background:#1a1010;color:#ffcccc;border:1px solid rgba(255,40,40,0.3)}
+.card{
+  max-width:900px;margin:50px auto;background:rgba(20,10,10,0.6);
+  border:1px solid rgba(255,30,30,0.18);border-radius:20px;
+  padding:26px 22px;backdrop-filter:blur(12px);
+}
+.card h2{font-size:1.4rem;margin-bottom:6px}
+.card h2 span{color:#ff2a2a}
+.code{
+  background:#0f0707;border:1px solid rgba(255,30,30,0.2);
+  border-radius:12px;padding:14px;margin-top:14px;
+  font-family:'JetBrains Mono',monospace;font-size:.85rem;
+  color:#ffcccc;overflow-x:auto;line-height:1.6;
+}
+.tag{display:inline-block;padding:3px 8px;border-radius:6px;background:rgba(255,20,20,0.15);border:1px solid rgba(255,20,20,0.2);font-size:.7rem;color:#ffaaaa;margin-right:6px}
+footer{text-align:center;padding:40px 20px;color:#7a6a6a;font-size:.75rem;line-height:1.6}
+footer a{color:#ff7777;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="dragon"></div>
+
+<div class="nav">
+  <div class="mono" style="font-weight:800;letter-spacing:.15em">VYRAGON OS</div>
+  <div class="mono" style="font-size:.58rem;color:#ff9999">USE RESPONSIBLY • RED BUILD</div>
+</div>
+
+<div class="hero">
+  <!-- Replace with <img src="logo.png"> when you have it -->
+  <div style="display:flex;justify-content:center"><div class="logo-box">🐉</div></div>
+  
+  <div style="margin-top:18px"><span class="badge mono">v1.0 • OPEN SOURCE • RED TEAM • TOOLS COLLECTION</span></div>
+  
+  <h1>Vyragon<span>OS</span></h1>
+  <p class="mono" style="font-size:.95rem;margin-top:4px;opacity:.9">( Open Source )<br>Vyragon OS is an collection of Individual custom Tools & Projects. Feel free to explore!</p>
+
+  <div class="btns">
+    <a class="btn btn-red" href="https://github.com/albi-cyber/Hacked-Matrix" target="_blank">View Hacked-Matrix on GitHub</a>
+    <a class="btn btn-dark" href="https://github.com/albi-cyber" target="_blank">GitHub Profile</a>
+  </div>
+  <div class="mono" style="margin-top:16px;font-size:.72rem;color:#8a7070">Contact: via GitHub • albi-cyber</div>
+</div>
+
+<div class="card">
+  <div><span class="tag mono">TOOL</span> <span class="tag mono">RUBY</span> <span class="tag mono">KALI LINUX</span></div>
+  <h2 style="margin-top:14px">Hacked-Matrix</h2>
+  <p style="color:#c9b5b5;margin-top:8px;line-height:1.6">A custom terminal digital rain effect written in Ruby for Kali Linux, displaying " System Hacked ".</p>
+  
+  <div style="margin-top:18px;font-weight:700;font-size:.9rem">To Clone the repository;</div>
+  <div class="code">git clone https://github.com/albi-cyber/Hacked-Matrix.git<br>cd Hacked-Matrix</div>
+
+  <div style="margin-top:14px;font-weight:700;font-size:.9rem">To make it executable:</div>
+  <div class="code">chmod +x Hacked-Matrix</div>
+
+  <div style="margin-top:14px;font-weight:700;font-size:.9rem">To Run;</div>
+  <div class="code">./Hacked-Matrix</div>
+
+  <div style="margin-top:18px;font-weight:700;font-size:.9rem">Requirements:</div>
+  <div class="code">Ruby installed on your system</div>
+
+  <div style="margin-top:22px;padding:14px;border-radius:12px;background:rgba(80,10,10,0.4);border:1px solid rgba(255,30,30,0.25)">
+    <div style="font-weight:800;color:#ffaaaa;font-size:.85rem">DISCLAIMER:</div>
+    <div style="font-size:.82rem;color:#d0a8a8;margin-top:6px;line-height:1.5">This tool is created for educational, aesthetic, and entertainment purposes only. It is a visual terminal animation designed to look like a hacking effect and does not perform any actual malicious actions, network infiltration, or system compromise.<br><br>The author assumes no liability and is not responsible for any misuse or damage caused by this software. Use it responsibly.</div>
+  </div>
+</div>
+
+<footer class="mono">
+  © 2026 Vyragon OS (Open Source) • Individual Project • Educational <br>
+   • Use Responsibly 
+</footer>
+
+</body>
+</html>
